@@ -30,7 +30,11 @@
   ],
   "env": {
     "APP_ENV": "production",
-    "APP_DEBUG": "false",
-    "APP_KEY": "base64:T/VwGzKkX2g+2m6C+9u0QfO1oH4W3LpX7zYyH5R8EzA="
+    "APP_DEBUG": "true",
+    "APP_KEY": "base64:T/VwGzKkX2g+2m6C+9u0QfO1oH4W3LpX7zYyH5R8EzA=",
+    "VIEW_COMPILED_PATH": "/tmp",
+    "CACHE_DRIVER": "array",
+    "LOG_CHANNEL": "stderr",
+    "SESSION_DRIVER": "cookie"
   }
 }
