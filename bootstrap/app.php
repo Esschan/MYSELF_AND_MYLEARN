@@ -21,7 +21,7 @@ $app = Application::configure(basePath: dirname(__DIR__))
                     'file' => $e->getFile(),
                     'line' => $e->getLine(),
                     'trace' => $e->getTraceAsString()
-                ], 500);
+                ], 200);
             });
         }
     })->create();
