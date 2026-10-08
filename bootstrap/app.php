@@ -14,7 +14,16 @@ $app = Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        if (isset($_ENV['APP_STORAGE'])) {
+            $exceptions->render(function (\Throwable $e) {
+                return response()->json([
+                    'error' => $e->getMessage(),
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'trace' => $e->getTraceAsString()
+                ], 500);
+            });
+        }
     })->create();
 
 // Gunakan folder storage khusus jika dijalankan di Vercel
