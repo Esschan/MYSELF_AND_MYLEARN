@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: web-profile-laravel
+    env: docker
+    plan: free
+    branch: main
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        value: base64:T/VwGzKkX2g+2m6C+9u0QfO1oH4W3LpX7zYyH5R8EzA=
