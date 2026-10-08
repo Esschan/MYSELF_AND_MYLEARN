@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Ribes';
+    src: url('./fonts/Ribes-Black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+    --font-ribes: "Ribes", sans-serif;
+}

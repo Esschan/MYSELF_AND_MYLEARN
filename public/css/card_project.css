@@ -1,0 +1,156 @@
+*{
+padding: 0;
+box-sizing: border-box;
+
+}
+
+body {
+    font-family: "Ribes";
+    background-color: azure;
+    margin: 30px 80px;
+    height: 100vh;
+
+}
+
+.wrapper {
+  perspective: 3000px;
+  display: flex;
+  align-items: flex-start; /* Membuat kartu dan teks sejajar di tengah secara vertikal */
+  gap: 60px; /* Jarak antara kartu dan teks di sampingnya */
+  max-width: 1000px;
+}
+
+.card{
+position: relative; /* PENTING: biar isinya gak tumpah keluar */
+width: 360px;
+height: 530px;
+transform-style: preserve-3d;
+transition: transform .8s ease-in-out; /* Typo: transfrom jadi transform */
+cursor: pointer;
+border : 1px solid blue;
+box-shadow: 5px 5px 10px rgba(0,0,0,0.2), 
+-5px -5px -10px rgba(0,0,0,0.05);
+border-radius: 15px;
+}
+
+.card:hover{
+   transform: rotateY(180deg);
+} 
+
+.front-page,
+.back-page{ /* KETINGGALAN TITIK (.) DI SINI */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+}
+
+.front-page{
+    background: url('../image/velina1.jpg'); /* JALUR GAMBAR DISESUAIKAN DENGAN PUBLIC */
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info{ /* Nama class disamakan dengan di HTML */
+position: absolute;
+bottom: 50px;
+left: 40px;
+color: white;
+text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+text-align: left; /* Teks rata kiri seperti di tutorial */
+}
+
+.card-title{
+font-size: 2rem; /* Typo: font-style jadi font-size, 2rems jadi 2rem */
+font-weight: bold;
+color: black;
+}
+
+.card-subtitle{
+
+    font-size: 1.2rem;
+    margin-top: 5px;
+   color: black;
+}
+
+.back-page{
+ background: url('../image/velina2.jpg');
+color: #fff;
+display: flex;
+flex-direction: column; /* Biar judul dan paragrafnya menurun ke bawah */
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 30px;
+transform: rotateY(180deg);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* KURANG KURUNG TUTUP DI SINI TADI! */
+}
+
+.card-content{
+    text-align: center;
+    padding: 20px;
+    max-width: 300px;
+}
+
+.card-content h3{
+ color: black;   
+ font-size: 1.8rem;
+ font-weight: bold;
+ margin-bottom: 15px;
+   
+}
+
+.card-description{
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 20px;
+    line-height: 1.6;
+
+}
+
+.card-button{
+background-color: rgb(136, 140, 143);
+color: #fff;
+padding:12px  24px;
+font-size: 1rem;
+border: none;
+border-radius: 25px;
+cursor: pointer;
+transition: all 0.3s ease;
+
+}
+
+.card-button:hover{
+    background-color:#084697 ;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* --- STYLING UNTUK TEKS DI SAMPING --- */
+.side-description {
+    max-width: 500px;
+    color: #222; /* Warna teks gelap karena background azure */
+    
+}
+
+.side-description h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.side-description p {
+    font-family: sans-serif; /* Paragraf pakai font biasa agar mudah dibaca */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.side-description ul {
+    font-family: sans-serif;
+    list-style: none;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
